@@ -25,6 +25,7 @@ body{
 }
 
 nav{
+    position: fixed;
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -33,6 +34,7 @@ nav{
     min-height: 32px;
     padding-inline: 8px;
     color: var(--sec-color);
+    z-index: 20;
 }
 
 nav .name{
@@ -44,14 +46,14 @@ nav ul{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    position: absolute;
+    position: fixed;
     background-color: hsla(120, 100%, 25%);
     top: 32px;
     left: 100%;
     width: 100%;
     height: calc(100vh - 32px);
     list-style: none;
-    z-index: 1;
+    z-index: 10;
 }
 
 nav li{
@@ -121,21 +123,58 @@ section{
 }
 
 .aboutMe h3{
+    margin-top: 20px;
     text-align: center;
 }
 
-.aboutMe .imgwrap{
-    width: 90%;
-    aspect-ratio: 1/1;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border: 3px dotted green;
+.grid{
+    display: grid;
+    align-content: center;
+    grid-template-columns: 90vw;
+    grid-template-rows: repeat(4, 70vw);
+    gap: 3vw;
 }
 
-.imgwrap img{
-    margin: 10%;
-    width: 80%;
-    box-shadow: 
-    5vw 5vw 0px 0px hsla(120, 100%, 12%),
-    -5vw -5vw 0px 0px hsla(120, 100%, 22%);
+.grid > div{
+    position: relative;
 }
+
+.grid > div img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.grid > div:nth-child(3) img{
+    object-position: top left;
+}
+
+.grid > div:nth-child(2n) img{
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
+}
+
+.grid > div:nth-child(2n + 1) img{
+border-top-right-radius: 40px;
+border-bottom-left-radius: 40px;
+}
+
+.grid > div h3{
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    z-index: 3;
+}
+
+.grid > div h3::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -32px;
+    width: 90vw;
+    height: 40px;
+    background: hsla(0, 0%, 100%, 0.7);
+    z-index: -1;
+}
+
+

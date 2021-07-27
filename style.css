@@ -48,6 +48,7 @@ nav ul {
     height: calc(100vh - 32px);
     list-style: none;
     z-index: 1;
+    overflow: hidden;
 }
 
 nav .toggle {

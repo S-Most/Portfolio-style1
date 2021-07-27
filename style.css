@@ -3,7 +3,6 @@
     --sec-color: white;
 }
 
-
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -16,7 +15,6 @@ body {
     min-height: 100vh;
     justify-content: flex-start;
     align-items: center;
-    overflow: hidden;
 }
 
 nav {
@@ -28,7 +26,6 @@ nav {
     min-height: 32px;
     padding-inline: 8px;
     color: var(--sec-color);
-    overflow: hidden;
 }
 
 nav .name{
@@ -48,7 +45,6 @@ nav ul {
     height: calc(100vh - 32px);
     list-style: none;
     z-index: 1;
-    overflow: hidden;
 }
 
 nav .toggle {

@@ -27,7 +27,8 @@ nav {
     background: var(--pri-color);
     min-height: 32px;
     padding-inline: 8px;
-    color: var(--sec-color)
+    color: var(--sec-color);
+    overflow: hidden;
 }
 
 nav .name{
